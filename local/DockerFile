@@ -1,0 +1,17 @@
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+RUN apt update && apt install unzip
+
+COPY *.zip .
+
+RUN unzip *.zip
+
+WORKDIR /app/GameServer
+
+RUN mv StrategicGameServer-*.jar StrategicGameServer.jar
+
+EXPOSE 7789
+
+CMD [ "java", "-jar", "/app/GameServer/StrategicGameServer.jar" ]

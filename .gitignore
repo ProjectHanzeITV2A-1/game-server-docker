@@ -1,0 +1,5 @@
+# Ignore files not owned by me
+local/*.zip
+
+online/*.jar
+online/*.properties
